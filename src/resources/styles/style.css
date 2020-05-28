@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 800ms ease 400ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 800ms ease 400ms;
+}
+
+/*# sourceMappingURL=style.css.map */
