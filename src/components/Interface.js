@@ -19,7 +19,7 @@ class Interface extends Component {
             <main>
                <form>
                   <input type="text" name="name" onChange={ (e) => this.submitHandler(e) }/>
-                  <Link to={{pathname:`/info`, input: this.state.value }} exact> 
+                  <Link to={{pathname:`/info`, input: this.state.value }} exact="true"> 
                     <input type="submit" value="submit" />
                   </Link>  
                </form>

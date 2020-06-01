@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom';
 import { Route, HashRouter } from 'react-router-dom';
 import './resources/styles/style.css';
 import Routes from './Routes';
+import Layout from './components/HOC/Layout';
 
 const App=()=>{
 
     return(
 
-        <HashRouter>
-            <Route path="/" component={Routes}/>
-        </HashRouter>
+        <Layout>
+            <HashRouter>
+
+                <Route path="/" component={Routes}/>
+                
+            </HashRouter>
+        </Layout>
+
     )
 }
 
