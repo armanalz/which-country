@@ -34,17 +34,18 @@ class FetchData extends Component {
         }
 
         return (
-            <div>
+            <div className="fetchdata">
                 
                 { this.state.data.map((val, index) => 
 
                   <Link  key={index} to={{pathname:`/final-info`, data:data[index]}} exact="true"> 
-                     <div style={{display: "flex"}}>
-                        <div >{val.name}</div>
-                        <img style={{height: "100px", width:"200px"}} src={val.flag} alt="flag"/>
+                     <div className="fetchdata_wrapper">
+                        <div className="fetchdata_wrapper name" >{val.name}</div>
+                        <img className="fetchdata_wrapper img" src={val.flag} alt="flag"/>
                      </div> 
-                  </Link> )
-                }
+                  </Link> 
+
+                )}
                 
            </div>
         );

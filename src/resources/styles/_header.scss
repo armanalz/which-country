@@ -1,0 +1,17 @@
+.header {
+
+    background-color: $color-red;
+    padding: 2rem 5rem;
+
+    &_title {
+
+        font-family: $bold-font;
+        color: $color-white;
+        text-transform: capitalize;
+        font-weight: 200;
+        font-size: 3rem;
+        word-spacing: 1rem;
+
+    }
+
+}

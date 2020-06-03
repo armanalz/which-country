@@ -1,0 +1,35 @@
+.fetchdata {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > a {
+
+        margin: 5rem 0;
+        padding: 0 ;
+        background-color: rgba($color-white, .3);
+        border-radius: 3px;
+        
+    }
+
+    &_wrapper {
+
+        background-color: transparent;
+        width: 70rem;
+        display: flex;
+        padding: 2rem 3rem ;
+        margin: 0;
+
+        &.name {
+
+        }
+
+        &.img {
+
+            height: 20rem;
+            width: 35rem;
+        }
+    }
+}

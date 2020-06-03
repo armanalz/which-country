@@ -2,10 +2,11 @@ import React from 'react';
 import Header from './Header'
 
 
-const Layout = () => {
+const Layout = (props) => {
     return (
-        <main>
+        <main className="main_layout">
             <Header/>
+            {props.children}
         </main>
     );
 };

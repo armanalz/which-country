@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div style={{background:"#111"}}>
-            header
-        </div>
+        <header className="header">
+            <h1 className="header_title">which  country</h1>
+        </header>
     );
 };
 

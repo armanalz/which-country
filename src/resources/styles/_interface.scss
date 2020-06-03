@@ -1,18 +1,89 @@
+.interface {
+
+      padding: 20rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &_description {
+
+           font-family: $header-font2;
+           font-size: 2rem;
+           text-transform: capitalize;
+           text-align: center;
+           color: $color-dark;
+           font-weight: bolder;
+           margin: 0 auto 9rem auto;
+
+      }
+
+     &_form {
+  
+        display: flex;
+
+        &-input {
+
+            width: 50rem;
+            height: 4rem;
+            padding: 0 1rem ;
+            border: none;
+            background-color: $color-pink;
+            margin: 0;
+            outline: none;
+
+        }
+
+        &-submit {
+
+            width: 9rem;
+            height: 4rem;
+            font-family: $header-font2;
+            font-size: 1.5rem;
+            font-family: $bold-font;
+            text-transform: capitalize;
+            background-color: $color-red;
+            color: $color-white;
+            font-weight: lighter;
+            cursor: pointer;
+            border: none;
+            margin: 0;
+            outline: none;
+
+        }
+     }
+
+}
+
+
+// CSSTransition Classes
+
 .fade-enter {
+
     opacity: 0;
     visibility: hidden;
+
   }
+
   .fade-enter-active {
+
     opacity: 1;
     visibility: visible;
     transition: opacity 800ms ease 400ms;
+
   }
+
   .fade-exit {
+
     opacity: 1;
     visibility: visible;
+
   }
+
   .fade-exit-active {
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 800ms ease 400ms;
+
   }
