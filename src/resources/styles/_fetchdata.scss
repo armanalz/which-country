@@ -4,32 +4,65 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 6rem 0 0 0 ;
 
     & > a {
 
-        margin: 5rem 0;
-        padding: 0 ;
+        margin: 0 auto 5rem auto;
+        padding: 0;
         background-color: rgba($color-white, .3);
         border-radius: 3px;
+
+        &:visited {
+
+            text-decoration: none;
+        }
+
+        &:link {
+
+            text-decoration: none;
+        }
         
+    }
+
+    &_404 {
+
+           margin: 20rem auto auto auto;
     }
 
     &_wrapper {
 
         background-color: transparent;
-        width: 70rem;
+        width: 90rem;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 2rem 3rem ;
         margin: 0;
 
-        &.name {
+        &-name {
+
+            font-size: 2rem;
 
         }
 
-        &.img {
+        &-img {
 
             height: 20rem;
-            width: 35rem;
+            max-width: 30rem;
         }
     }
+}
+
+.content {
+
+    font-family: $content-font;
+    color: $color-dark;
+    text-transform: capitalize;
+
+}
+
+.spinner {
+
+    padding-top: 22rem;
 }

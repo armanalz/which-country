@@ -8,12 +8,6 @@
 
       &_description {
 
-           font-family: $header-font2;
-           font-size: 2rem;
-           text-transform: capitalize;
-           text-align: center;
-           color: $color-dark;
-           font-weight: bolder;
            margin: 0 auto 9rem auto;
 
       }
@@ -38,7 +32,7 @@
 
             width: 9rem;
             height: 4rem;
-            font-family: $header-font2;
+            font-family:  $description-font;
             font-size: 1.5rem;
             font-family: $bold-font;
             text-transform: capitalize;
@@ -52,6 +46,29 @@
 
         }
      }
+
+     &_error {
+
+        margin-top: 2rem;
+
+        &.description {
+
+          color: $color-red;
+          font-size: 1.5rem;
+        
+        }
+     }
+
+}
+
+.description {
+
+  font-family: $description-font;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+  color: $color-dark;
+  font-weight: bolder;
 
 }
 

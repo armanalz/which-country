@@ -4,13 +4,40 @@ import { Link } from 'react-router-dom';
 class Interface extends Component {
 
     state = {
-        value: ""
+        value: null,
+        error: null,
+        path: ""
     }
 
-    submitHandler = (e) => {
+    changeHandler = (e) => {
 
-        this.setState({ value : e.target.value})
-        console.log(e.target.value)
+        if( !e.target.value ) {
+
+            this.setState({ error: "Cannot be empty", value : null, path: ""}) 
+
+
+        } else if( typeof e.target.value !== "undefined" ) {
+            if( !e.target.value.match(/^[a-zA-Z]+$/) ) {
+
+               this.setState({ error: "Only letters", value : null, path: ""})
+            } else {
+
+                this.setState({ error: null, path: "info", value : e.target.value})
+    
+            }       
+        } 
+
+    }
+
+    submitHandler = () => {
+
+
+        if( !this.state.value ) {
+
+            this.setState({ error: "Cannot be empty"})
+
+        } 
+
     }
 
     render() {
@@ -18,18 +45,21 @@ class Interface extends Component {
         return (
 
             <div className="interface">
-               <p className="interface_description">
+               <p className="interface_description description">
                     do you want to find out interesting facts about countries? <br/>
                     now you are able to search them by name
                </p>
                <form className="interface_form">
                   <input className="interface_form-input" type="text" name="name" 
-                         onChange={ (e) => this.submitHandler(e) }
+                         onChange={ (e) => this.changeHandler(e) }
                   />
-                  <Link to={{pathname:`/info`, input: this.state.value }} exact="true"> 
-                    <input className="interface_form-submit" type="submit" value="go" />
+                  <Link to={{pathname:`/${this.state.path}`, input: this.state.value }} exact="true" 
+                        onClick={ () => this.submitHandler()}
+                  > 
+                    <input className="interface_form-submit" type="submit" value="go"  />
                   </Link>  
                </form>
+               <h4 className="interface_error description">{this.state.error}</h4>
             </div>
 
         );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 class FetchData extends Component {
 
@@ -18,19 +19,26 @@ class FetchData extends Component {
         const fetchedData = await response.json();
         this.setState({ data: fetchedData, loading: false });
 
-        console.log(this.props.location.input)
+        console.log(this.state.data)
     }
 
     render() {
 
-        let data = this.state.data;
 
         if (this.state.loading) {
-            return <div>loading...</div>;
+            return( <div className="fetchdata spinner">
+                        <ScaleLoader  size={180}
+                                      color={"#443402"}
+                                      loading={this.state.loading}
+                        />
+                    </div>
+            );
         }
       
-        if (!this.state.data) {
-            return <div>didn't find a country</div>;
+        if (this.state.data.length === undefined) {
+
+            return <h1 className="fetchdata_404 description">didn't find a country whith such name</h1>;
+            
         }
 
         return (
@@ -38,10 +46,10 @@ class FetchData extends Component {
                 
                 { this.state.data.map((val, index) => 
 
-                  <Link  key={index} to={{pathname:`/final-info`, data:data[index]}} exact="true"> 
+                  <Link  key={index} to={{pathname:`/final-info`, data:this.state.data[index]}} exact="true"> 
                      <div className="fetchdata_wrapper">
-                        <div className="fetchdata_wrapper name" >{val.name}</div>
-                        <img className="fetchdata_wrapper img" src={val.flag} alt="flag"/>
+                        <h2 className="fetchdata_wrapper-name content" >{val.name}</h2>
+                        <img className="fetchdata_wrapper-img" src={val.flag} alt="flag"/>
                      </div> 
                   </Link> 
 

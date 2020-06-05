@@ -1,7 +1,44 @@
 .finaldata {
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12rem 4rem 7rem 4rem;
+    margin: 0 auto;
+    max-width: 128rem;
+
+    &_info {
+
+        min-width: 35rem;
+
+
+       &-item {
+
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+
+
+            &-name {
+
+                font-size: 3rem;
+                margin-bottom: 4rem;
+            
+            }
+       }
+
+    }
+
+    &_flag {
+
+        &-img {
+
+            height: 40rem;
+            max-width: 75rem;
+        }
+    }
+
+
 }
+
