@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Icon from './utilities/Icon';
 
 class Interface extends Component {
 
     state = {
+
         value: null,
         error: null,
         path: ""
+
     }
 
     componentDidMount() {
+
         window.sessionStorage.clear();
+        
     }
 
     changeHandler = (e) => {
 
         if( !e.target.value ) {
 
-            this.setState({ error: "Cannot be empty", value : null, path: ""}) 
+            this.setState({ error: "Cannot be empty", path: ""}) 
 
 
         } else if( typeof e.target.value !== "undefined" ) {
             if( !e.target.value.match(/^[a-zA-Z]+$/) ) {
 
-               this.setState({ error: "Only letters", value : null, path: ""})
+               this.setState({ error: "Only letters", value : " ", path: ""})
             } else {
 
                 this.setState({ error: null, path: "info", value : e.target.value})
@@ -40,7 +45,11 @@ class Interface extends Component {
 
             this.setState({ error: "Cannot be empty"})
 
-        } 
+        } else if( this.state.value === " " ) {
+
+            this.setState({ error: "Only letters"})
+
+        }
 
     }
 
@@ -54,6 +63,7 @@ class Interface extends Component {
                     now you are able to search them by name
                </p>
                <form className="interface_form">
+                  <div className="interface_form-svg"><Icon class='svg' icon='search'/></div>
                   <input className="interface_form-input" type="text" name="name" 
                          onChange={ (e) => this.changeHandler(e) }
                   />

@@ -7,9 +7,35 @@
     margin: 0 auto;
     max-width: 128rem;
 
+    @include respond(tab-land) {
+             
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 8rem 4rem 7rem 4rem;
+      
+    }
+
+    @include respond(xs) {
+             
+        padding: 6rem 4rem 7rem 4rem;
+     
+    }
+
     &_info {
 
-        min-width: 35rem;
+        min-width: 40rem;
+
+        @include respond(tab-land) {
+             
+            min-width: 45rem;
+          
+        }
+
+        @include respond(xs) {
+             
+            min-width: 32rem;
+         
+        }
 
 
        &-item {
@@ -32,10 +58,37 @@
 
     &_flag {
 
+        @include respond(tab-land) {
+             
+           margin-bottom: 3rem;
+          
+        }
+
         &-img {
 
             height: 40rem;
-            max-width: 75rem;
+            max-width: 70rem;
+
+            @include respond(tab-port) {
+             
+                max-width: 52rem;
+                height: 28rem;
+               
+            }
+
+            @include respond(phone) {
+             
+                max-width: 42rem;
+                height: 22rem;
+               
+            }
+
+            @include respond(xs) {
+             
+                max-width: 32rem;
+                height: 17rem;
+             
+            }
         }
     }
 

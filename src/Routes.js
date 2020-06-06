@@ -17,7 +17,7 @@ class Routes extends Component {
             <TransitionGroup>
 
                <CSSTransition classNames="fade" 
-                              timeout={1200} 
+                              timeout={800} 
                               key={location.pathname}            
                >
             

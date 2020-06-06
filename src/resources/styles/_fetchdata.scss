@@ -40,6 +40,25 @@
         padding: 2rem 3rem ;
         margin: 0;
 
+        @include respond(tab-port) {
+             
+            width: 54rem;
+          
+        }
+
+        @include respond(phone) {
+             
+            width: 44rem;
+          
+        }
+
+        @include respond(xs) {
+             
+            width: 34rem;
+            padding: 2rem;
+         
+        }
+
         &-name {
 
             font-size: 2rem;
@@ -50,6 +69,20 @@
 
             height: 20rem;
             max-width: 30rem;
+
+            @include respond(phone) {
+             
+                max-width: 20rem;
+                height: 13.5rem;
+              
+            }
+
+            @include respond(xs) {
+             
+                max-width: 16rem;
+                height: 11rem;
+             
+            }
         }
     }
 

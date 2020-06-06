@@ -6,9 +6,16 @@
       justify-content: center;
       align-items: center;
 
+      @include respond(xs) {
+             
+         padding: 10rem 3rem;
+     
+      }
+
       &_description {
 
            margin: 0 auto 9rem auto;
+           line-height: 4rem;
 
       }
 
@@ -16,15 +23,58 @@
   
         display: flex;
 
+        &-svg {
+
+          height: 4rem;
+          width: 4rem;
+          background-color: $color-pink;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+
+        }
+
         &-input {
 
             width: 50rem;
             height: 4rem;
-            padding: 0 1rem ;
+            padding: 0;
             border: none;
             background-color: $color-pink;
             margin: 0;
             outline: none;
+
+            &::selection {
+
+              background: $color-pink;
+
+            }
+            
+            &::-moz-selection {
+
+              background: $color-pink;
+
+            }
+
+            &:focus {
+
+              background: $color-pink;
+
+            }
+            
+
+            @include respond(phone) {
+             
+                width: 30rem;
+              
+            }
+
+            @include respond(xs) {
+             
+                width: 20rem;
+             
+            }
 
         }
 
@@ -33,6 +83,12 @@
             width: 9rem;
             height: 4rem;
             margin: 0;
+
+            @include respond(xs) {
+             
+              width: 5rem;
+           
+            }
 
         }
      }
@@ -60,6 +116,13 @@
     color: $color-dark;
     font-weight: bolder;
 
+
+    @include respond(xs) {
+             
+       font-size: 1.7rem;
+
+    }
+
 }
 
 .btn {
@@ -78,6 +141,15 @@
 }
 
 
+/// svg style
+
+.svg {
+
+  fill: $color-dark;
+
+}
+
+
 // CSSTransition Classes
 
 .fade-enter {
@@ -91,7 +163,7 @@
 
     opacity: 1;
     visibility: visible;
-    transition: opacity 800ms ease 400ms;
+    transition: opacity 600ms ease 200ms;
 
   }
 
@@ -106,6 +178,18 @@
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 800ms ease 400ms;
+    transition: opacity 600ms ease 200ms;
 
   }
+
+
+// Removing input background colour for Chrome autocomplete
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+
+    -webkit-box-shadow: 0 0 0 30px $color-pink inset !important;
+
+}

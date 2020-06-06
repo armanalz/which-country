@@ -30,10 +30,10 @@ body {
         @media only screen and (max-width:30em) { @content };    //480px
     }
     @if $breakpoint == phone {
-        @media only screen and (max-width:36em) { @content };    //576px
+        @media only screen and (max-width:37.5em) { @content };    //600px
     }
     @if $breakpoint == tab-port {
-        @media only screen and (max-width: 62.5em) { @content };     //1000px
+        @media only screen and (max-width: 60em) { @content };     //960px
     }
     @if $breakpoint == tab-land {
         @media only screen and (max-width: 75em) { @content };    //1200px

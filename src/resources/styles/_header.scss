@@ -3,6 +3,12 @@
     background-color: $color-red;
     padding: 2rem 5rem;
 
+    @include respond(xs) {
+             
+        padding: 2rem 3rem;
+     
+    }
+
     & > a {
 
         text-decoration: none;
@@ -17,6 +23,12 @@
         font-weight: 200;
         font-size: 3rem;
         word-spacing: 1rem;
+
+        @include respond(xs) {
+             
+            font-size: 2.3rem;
+         
+        }
 
     }
 

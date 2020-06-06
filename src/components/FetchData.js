@@ -43,23 +43,6 @@ class FetchData extends Component {
             window.sessionStorage.setItem('last input', input);
     }
 
-    setter = () => {
-
-        sessionStorage.setItem('last input', this.props.location.input);
-
-
-        if (sessionStorage.getItem("last input")) {
-        
-            this.setState({ input :sessionStorage.getItem("last input")})
-
-        } else {
-
-            this.setState({ input : this.props.location.input})
-
-        }
-
-    }
-
     loadMore = () => {
 
         this.setState({ data: [...this.state.data,
