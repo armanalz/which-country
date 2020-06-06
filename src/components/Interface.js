@@ -9,6 +9,10 @@ class Interface extends Component {
         path: ""
     }
 
+    componentDidMount() {
+        window.sessionStorage.clear();
+    }
+
     changeHandler = (e) => {
 
         if( !e.target.value ) {
@@ -56,7 +60,7 @@ class Interface extends Component {
                   <Link to={{pathname:`/${this.state.path}`, input: this.state.value }} exact="true" 
                         onClick={ () => this.submitHandler()}
                   > 
-                    <input className="interface_form-submit" type="submit" value="go"  />
+                    <input className="interface_form-submit btn" type="submit" value="go"  />
                   </Link>  
                </form>
                <h4 className="interface_error description">{this.state.error}</h4>

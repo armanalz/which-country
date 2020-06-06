@@ -32,17 +32,7 @@
 
             width: 9rem;
             height: 4rem;
-            font-family:  $description-font;
-            font-size: 1.5rem;
-            font-family: $bold-font;
-            text-transform: capitalize;
-            background-color: $color-red;
-            color: $color-white;
-            font-weight: lighter;
-            cursor: pointer;
-            border: none;
             margin: 0;
-            outline: none;
 
         }
      }
@@ -63,12 +53,27 @@
 
 .description {
 
-  font-family: $description-font;
-  font-size: 2rem;
-  text-transform: capitalize;
-  text-align: center;
-  color: $color-dark;
-  font-weight: bolder;
+    font-family: $description-font;
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    color: $color-dark;
+    font-weight: bolder;
+
+}
+
+.btn {
+
+    font-family:  $description-font;
+    font-size: 1.5rem;
+    font-family: $bold-font;
+    text-transform: capitalize;
+    background-color: $color-red;
+    color: $color-white;
+    font-weight: lighter;
+    cursor: pointer;
+    border: none;  
+    outline: none;
 
 }
 

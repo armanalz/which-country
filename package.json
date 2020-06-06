@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-infinite-scroll-component": "^5.0.5",
     "react-scripts": "3.4.1",
     "react-spinners": "^0.8.3"
   },
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "react-router-dom": "^5.2.0",
+    "react-simple-infinite-loading": "^1.0.0",
     "react-transition-group": "^4.4.1"
   }
 }

@@ -7,20 +7,67 @@ class FetchData extends Component {
     state = {
 
         loading: true,
-        data: null
+        data: [],
+        fullData: [],
+        per: 5,
+        input: null
 
     };
 
-    
+
     async componentDidMount() {
 
-        const url = `https://restcountries.eu/rest/v2/name/${this.props.location.input}`;
-        const response = await fetch(url);
-        const fetchedData = await response.json();
-        this.setState({ data: fetchedData, loading: false });
+      
+            let input
 
-        console.log(this.state.data)
+            if ( window.sessionStorage.getItem("last input") ) {
+            
+                input = window.sessionStorage.getItem("last input")
+
+            } else {
+
+                input = this.props.location.input
+
+            }
+
+
+            const url = `https://restcountries.eu/rest/v2/name/${input}`;
+            const response = await fetch(url);
+            const fetchedData = await response.json();
+            if( fetchedData.length <= 5 ) {
+                this.setState({ data: fetchedData, loading: false });
+            } else {
+                this.setState({ fullData: fetchedData, data: fetchedData.slice(0, this.state.per), loading: false });
+            }
+           
+            window.sessionStorage.setItem('last input', input);
     }
+
+    setter = () => {
+
+        sessionStorage.setItem('last input', this.props.location.input);
+
+
+        if (sessionStorage.getItem("last input")) {
+        
+            this.setState({ input :sessionStorage.getItem("last input")})
+
+        } else {
+
+            this.setState({ input : this.props.location.input})
+
+        }
+
+    }
+
+    loadMore = () => {
+
+        this.setState({ data: [...this.state.data,
+                        ...this.state.fullData.slice(this.state.per, this.state.per + 5)],
+                        per: this.state.per + 5
+         });
+    }
+
 
     render() {
 
@@ -40,11 +87,11 @@ class FetchData extends Component {
             return <h1 className="fetchdata_404 description">didn't find a country whith such name</h1>;
             
         }
-
+       
         return (
             <div className="fetchdata">
-                
-                { this.state.data.map((val, index) => 
+
+                {  this.state.data.map((val, index) => 
 
                   <Link  key={index} to={{pathname:`/final-info`, data:this.state.data[index]}} exact="true"> 
                      <div className="fetchdata_wrapper">
@@ -53,8 +100,10 @@ class FetchData extends Component {
                      </div> 
                   </Link> 
 
-                )}
-                
+                ) }
+              {this.state.fullData.length === 0 || this.state.fullData.length === this.state.data.length ? null :
+              <div className="fetchdata_button btn" onClick={() => this.loadMore()}>load more</div>
+              }  
            </div>
         );
     }

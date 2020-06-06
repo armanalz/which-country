@@ -3,6 +3,12 @@
     background-color: $color-red;
     padding: 2rem 5rem;
 
+    & > a {
+
+        text-decoration: none;
+        width: 30rem;
+    }
+
     &_title {
 
         font-family: $bold-font;

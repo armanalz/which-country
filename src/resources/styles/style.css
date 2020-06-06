@@ -40,6 +40,10 @@ body {
   background-color: #e24e42;
   padding: 2rem 5rem;
 }
+.header > a {
+  text-decoration: none;
+  background-color: 0;
+}
 .header_title {
   font-family: "Monoton", cursive;
   color: #FEFEFE;
@@ -74,17 +78,7 @@ body {
 .interface_form-submit {
   width: 9rem;
   height: 4rem;
-  font-family: "Indie Flower", cursive;
-  font-size: 1.5rem;
-  font-family: "Monoton", cursive;
-  text-transform: capitalize;
-  background-color: #e24e42;
-  color: #FEFEFE;
-  font-weight: lighter;
-  cursor: pointer;
-  border: none;
   margin: 0;
-  outline: none;
 }
 .interface_error {
   margin-top: 2rem;
@@ -101,6 +95,19 @@ body {
   text-align: center;
   color: #443402;
   font-weight: bolder;
+}
+
+.btn {
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5rem;
+  font-family: "Monoton", cursive;
+  text-transform: capitalize;
+  background-color: #e24e42;
+  color: #FEFEFE;
+  font-weight: lighter;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 .fade-enter {
@@ -162,6 +169,12 @@ body {
 .fetchdata_wrapper-img {
   height: 20rem;
   max-width: 30rem;
+}
+.fetchdata_button {
+  padding: 1rem 1.5rem;
+  margin: 5rem auto;
+  word-spacing: 1rem;
+  border-radius: 4px;
 }
 
 .content {

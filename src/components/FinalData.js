@@ -39,9 +39,7 @@ class FinalData extends Component {
                     <div className="finaldata_info-item content">
                         <h4>code</h4>
                         <h4>{this.props.location.data.alpha2Code}</h4>
-                    </div>
-                    
-                   
+                    </div>              
         
                 </div>
                 <div className="finaldata_flag">
