@@ -31,6 +31,11 @@ class FinalData extends Component {
             
     }
 
+    componentWillUnmount() {
+
+        window.sessionStorage.removeItem("last data");
+    } 
+
     render() {
 
         return (
