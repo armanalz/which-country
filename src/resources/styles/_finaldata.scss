@@ -24,6 +24,7 @@
     &_info {
 
         min-width: 40rem;
+        max-width: 45rem;
 
         @include respond(tab-land) {
              

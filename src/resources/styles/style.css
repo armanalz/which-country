@@ -302,6 +302,7 @@ input:-webkit-autofill:active {
 }
 .finaldata_info {
   min-width: 40rem;
+  max-width: 45rem;
 }
 @media only screen and (max-width: 75em) {
   .finaldata_info {
